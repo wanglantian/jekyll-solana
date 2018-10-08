@@ -50,9 +50,9 @@ layout: default
 			</div>
 			{% if item.category %} <div class="{{ item_type }}__entry-category {{ item_type }}__entry-category--{{ page_type }}">{{ item.category }}</div> {% endif %}
 			</li>
-		{% elsif isEssay and item.essay %}
+		{% elsif isEssay %}
 			<li class="{{ item_type }}__entry {{ item_type }}--{{ page_type }}__entry">
-				{% if item_type == 'posts' %}
+				{% if item_type == 'posts' %} {% item.essay %}
 				  <time class="posts__entry-date posts__entry-date--{{ page_type }}" datetime="{{ item.date | date_to_xmlschema }}">
 					{{ item.date | date: "%b %-d" }}
 				  </time>
