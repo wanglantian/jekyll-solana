@@ -33,12 +33,12 @@ layout: default
 
 <main class="{{ item_type }} {{ item_type }}--{{ page_type }}" role="main">
   <h2 class="{{ item_type }}__heading {{ item_type }}--{{ page_type }}__heading">{{ page.title }}</h2>
-
+{% isEssay %}
   <ul class="{{ item_type }}__list {{ item_type }}--{{ page_type }}__list">
     {% for item in pool %}
 		{% if isEssay == false %}
 			<li class="{{ item_type }}__entry {{ item_type }}--{{ page_type }}__entry">
-			{% if item_type == 'posts' %}
+			{% if item_type == 'posts' %} {% item.essay %}
 			  <time class="posts__entry-date posts__entry-date--{{ page_type }}" datetime="{{ item.date | date_to_xmlschema }}">
 				{{ item.date | date: "%b %-d" }}
 			  </time>
