@@ -36,8 +36,10 @@ layout: default
 
   <ul class="{{ item_type }}__list {{ item_type }}--{{ page_type }}__list">
     {% for item in pool %}
+		{{ item.title }}
 		{% if isessay == false %}
 			{% if item.essay %}
+				{{ item.title }}
 			{% else %}
 				<li class="{{ item_type }}__entry {{ item_type }}--{{ page_type }}__entry">
 				{% if item_type == 'posts' %}
