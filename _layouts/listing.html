@@ -22,7 +22,7 @@ layout: default
 {% elsif page.path == 'essay.html' %}
   {% assign page_type = 'listing' %}
   {% assign item_type = 'posts' %}
-  {% assign pool = paginator.posts %}
+  {% assign pool = site.posts %}
   {% assign isessay = true %}
 {% else %}
   {% assign page_type = 'home' %}
