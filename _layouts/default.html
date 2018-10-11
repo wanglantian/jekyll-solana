@@ -10,10 +10,6 @@
   {% assign page_type = 'home' %}
   {% assign title = site.title %}
   {% assign teaser = site.description %}
-{% elsif page.title == 'essay' %}
-  {% assign page_type = 'home' %}
-  {% assign title = page.title %}
-  {% assign teaser = page.description %}
 {% elsif page.layout == 'listing' %}
   {% assign page_type = 'listing' %}
   {% assign title = title | append: ' | ' | append: site.title %}
