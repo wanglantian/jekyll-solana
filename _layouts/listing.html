@@ -12,23 +12,23 @@ layout: default
   {% assign label = page.path | split: '/' | last | split: '.' | first %}
 
   {% assign pool = site.posts | where: filter, label %}
-  {% assign isEssay = false %}
+  {% assign isessay = false %}
 {% elsif page.path == 'projects.html' %}
   {% assign page_type = 'listing' %}
   {% assign item_type = 'projects' %}
   {% assign pool = site.projects %}
   {% assign outbound_link_flag = ' target="_blank"' %}
-  {% assign isEssay = false %}
+  {% assign isessay = false %}
 {% elsif page.path == 'essay.html' %}
   {% assign page_type = 'listing' %}
   {% assign item_type = 'posts' %}
   {% assign pool = paginator.posts %}
-  {% assign isEssay = true %}
+  {% assign isessay = true %}
 {% else %}
   {% assign page_type = 'home' %}
   {% assign item_type = 'posts' %}
   {% assign pool = paginator.posts %}
-  {% assign isEssay = false %}
+  {% assign isessay = false %}
 {% endif %}
 
 <main class="{{ item_type }} {{ item_type }}--{{ page_type }}" role="main">
@@ -36,8 +36,8 @@ layout: default
 
   <ul class="{{ item_type }}__list {{ item_type }}--{{ page_type }}__list">
     {% for item in pool %}
-		{% if isEssay == false %}
-			{% item.essay %}
+		{% if isessay == false %}
+			{% if item.essay %}
 			{% else %}
 				<li class="{{ item_type }}__entry {{ item_type }}--{{ page_type }}__entry">
 				{% if item_type == 'posts' %}
